@@ -1,1 +1,3 @@
 *.pyc
+capstone/migrations/
+db.sqlite3
