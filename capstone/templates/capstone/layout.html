@@ -21,11 +21,14 @@
     <div class="">
 
         <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">My Merchandise</a>
+            <a class="navbar-brand" href={% url 'index'%}>My Merchandise</a>
           
             <div>
               <ul class="navbar-nav mr-auto">
                 {% if user.is_authenticated %}
+                    <li class="nav-item">
+                                <a class="nav-link" href="{% url 'addMerchandise'%}">Add Merchandise</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Sales</a>
                     </li>

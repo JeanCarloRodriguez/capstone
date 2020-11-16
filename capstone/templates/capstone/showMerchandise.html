@@ -1,0 +1,39 @@
+{% extends "capstone/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="container">
+    <br>
+    <h3> Merchandise - {{ merchandise.code }} </h3>
+    <br>
+
+    <ul class="list-group">
+        <li class="list-group-item"> <b>Title:</b> {{ merchandise.title }} </li>
+        <li class="list-group-item"><b>Code:</b> {{ merchandise.code }} </li>
+        <li class="list-group-item"><b>Description:</b> {{ merchandise.description }} </li>
+        <li class="list-group-item"><b>Quantity:</b> {{ merchandise.quantity }} </li>
+        <li class="list-group-item"><b>Currency:</b> {{ merchandise.currency }} </li>
+        <li class="list-group-item"><b>Total Adquisition Cost:</b> {{ merchandise.total_acquisition_cost }} </li>
+        <li class="list-group-item"><b>Adquisition Date:</b> {{ merchandise.acquisition_date }} </li>
+    </ul>
+    <br>
+    
+    <h4>Add Adquisition Cost<h4>
+    <form class="form-inline" action="">
+        <div class="form-group">
+            <input class="form-control form-control-sm" type="text" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <input class="form-control form-control-sm" type="text" placeholder="Description">
+        </div>
+        <div class="form-group">
+            <input class="form-control form-control-sm" type="text" placeholder="Cost">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn-sm btn-dark btn-primary">Submit</button>
+        </div>
+    </form>
+
+
+
+{% endblock %}

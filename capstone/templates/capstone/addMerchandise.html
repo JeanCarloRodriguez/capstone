@@ -1,0 +1,30 @@
+{% extends "capstone/layout.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block body %}
+<div class="container">
+    <h3> Add Merchandise </h3>
+
+    {% if message %}
+        <div class="alert alert-danger">
+                <strong>{{ message|escape }}</strong>
+        </div>
+    {% endif %}
+
+    <form action="{% url 'addMerchandise'%}" method="POST">
+            {% csrf_token %}
+            {% for field in merchandise_form.visible_fields %}
+                <div class="form-group">
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {% render_field field class="form-control" %}
+                </div>
+            {% endfor %}
+            <div class="form-group">
+                <input class="btn btn-dark btn-primary" type="submit" value="Add">
+            </div>
+        </form>
+
+</div>
+{% endblock %}

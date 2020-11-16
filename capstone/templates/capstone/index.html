@@ -6,5 +6,63 @@
 {% endblock script %}
 
 {% block body %}
+<div class="container">
+    <h3> Inventory </h3>
+
+    <div class="row">
+        {% for item in merchandise %}
+            <div class="col-sm-4 mb-3">
+                <div class="card text-dark bg-light">
+                    <div class="card-header text-light bg-dark">{{ item.code }}</div>
+                    <div class="card-body">
+                        <h5 class="card-title ">{{ item.title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Left: 59 units</h6>
+                        <p class="card-text">{{ item.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href={% url 'showMerchandise' item.code %} class="btn btn-dark btn-primary">Go to details</a>
+                        <a href="#" class="btn btn-dark btn-primary">Registry a Sale</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+
+        {% comment %} <div class="col-sm-4 mb-3">
+            <div class="card text-dark bg-light">
+                <div class="card-header text-light bg-dark">OX0001</div>
+                <div class="card-body">
+                    <h5 class="card-title ">Oximetter IMDK</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Left: 59 units</h6>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-dark btn-primary">Go to details</a>
+                    <a href="#" class="btn btn-dark btn-primary">Registry a Sale</a>
+                </div>
+            </div>
+        </div> {% endcomment %}
+
+        {% comment %} <div class="col-sm-4 mb-3">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mb-3">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div> {% endcomment %}
+
+</div>
 
 {% endblock %}
